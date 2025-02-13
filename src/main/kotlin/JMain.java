@@ -1,10 +1,11 @@
-import java.util.Arrays;
-import java.util.List;
+public class StringUtils {
+    public static String greet(String name) {
+        return "Hello, " + name + "!";
+    }
+}
 
 public class JMain {
     public static void main(String[] args) {
-        List<String> names = Arrays.asList("Alice", "Bob", "Charlie");
-
-        names.forEach(name -> System.out.println("Hello, " + name));
+        System.out.println(StringUtils.greet("Alice"));
     }
 }
