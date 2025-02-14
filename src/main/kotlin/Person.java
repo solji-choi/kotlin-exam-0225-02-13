@@ -1,37 +1,25 @@
-import java.util.Objects;
+class Person {
+    String name;
+    int age;
 
-public class Person {
-    private String name;
-    private int age;
-
-    public Person(String name, int age) {
+    public Person setName(String name) {
         this.name = name;
+        return this;
+    }
+
+    public Person setAge(int age) {
         this.age = age;
+        return this;
     }
 
-    public String getName() {
-        return name;
+    public void printInfo() {
+        System.out.println(name + " is " + age + " years old.");
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Person person = (Person) o;
-        return age == person.age && Objects.equals(name, person.name);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, age);
-    }
-
-    @Override
-    public String toString() {
-        return "Person{name='" + name + "', age=" + age + "}";
+    public static void main(String[] args) {
+        Person person = new Person()
+                .setName("Alice")
+                .setAge(30);
+        person.printInfo();
     }
 }
