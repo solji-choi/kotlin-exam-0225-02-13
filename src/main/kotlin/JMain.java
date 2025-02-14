@@ -1,9 +1,10 @@
 public class JMain {
     public static void main(String[] args) {
-        String message = "Hello";
+        int result = compute(5);
+        System.out.println("Result: " + result);
+    }
 
-        System.out.println("Before: " + message);
-        message = message.toUpperCase();
-        System.out.println("After: " + message);
+    public static int compute(int x) {
+        return x * 2 + 10;
     }
 }
