@@ -1,20 +1,16 @@
 class Example {
     private String value;
 
-    public void setValue(String value) {
-        this.value = value;
-    }
-
     public String getValue() {
         if (value == null) {
-            throw new IllegalStateException("Value is not initialized");
+            value = "Hello, Lazy!";
         }
         return value;
     }
 
     public static void main(String[] args) {
         Example example = new Example();
-        example.setValue("Hello, Kotlin!");
-        System.out.println(example.getValue());
+        System.out.println(example.getValue()); // 최초 접근 시 초기화
+        System.out.println(example.getValue()); // 이후 캐싱된 값 사용
     }
 }
