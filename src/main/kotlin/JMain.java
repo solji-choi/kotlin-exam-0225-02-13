@@ -1,18 +1,22 @@
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.StandardCopyOption;
-
 public class JMain {
     public static void main(String[] args) {
-        try {
-            copy("a.txt", "a_copy.txt");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
+        int day = 3;
+        String dayName;
 
-    public static void copy(String source, String target) throws IOException {
-        Files.copy(new File(source).toPath(), new File(target).toPath(), StandardCopyOption.REPLACE_EXISTING);
+        switch (day) {
+            case 1:
+                dayName = "Monday";
+                break;
+            case 2:
+                dayName = "Tuesday";
+                break;
+            case 3:
+                dayName = "Wednesday";
+                break;
+            default:
+                dayName = "Invalid Day";
+        }
+
+        System.out.println("Day: " + dayName);
     }
 }
